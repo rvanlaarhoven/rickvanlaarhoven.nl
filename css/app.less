@@ -1,0 +1,99 @@
+@import 'normalize.less';
+
+// Variables
+@transition: all 0.5s ease 0s;
+
+// Colors
+@background-color: #F9F9F9;
+@selection-color: #b3d4fc;
+@link-color: #88B899;
+@heading-color: #555;
+@text-color: #B1B1B1;
+
+// Styles
+html {
+    color: @text-color;
+    background: @background-color;
+    position: relative;
+    font-weight: 300;
+}
+body {
+    font-size: 0.7em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: @selection-color;
+    text-shadow: none;
+}
+::selection {
+    background: @selection-color;
+    text-shadow: none;
+}
+
+a {
+    color: @link-color;
+    text-decoration: none;
+
+    -webkit-transition: @transition;
+    -moz-transition: @transition;
+    -o-transition: @transition;
+    -ms-transition: @transition;
+    transition: @transition;
+
+    &:hover {
+        color: darken(@link-color, 10%);
+        text-decoration: underline;
+    }
+}
+
+h1 {
+    color: @heading-color;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-weight: bold;
+}
+
+p {
+    color: @text-color;
+    font-size: 1.5em;
+}
+
+.chromeframe {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.container {
+    max-width: 1140px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    min-height: 500px;
+    text-align: center;
+    padding-top: 200px;
+
+    @media (max-width: 992px) {
+        padding-top: 100px;
+    }
+    @media (max-width: 768px) {
+        padding-top: 50px;
+    }
+}
+
+.clearfix {
+    &:before,
+    &:after {
+        content: " "; /* 1 */
+        display: table; /* 2 */
+    }
+    &:after {
+        clear: both;
+    }
+
+    *zoom: 1;
+}
