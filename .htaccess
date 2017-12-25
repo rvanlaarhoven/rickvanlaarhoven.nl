@@ -2,10 +2,11 @@
   RewriteEngine On
 
   RewriteCond %{HTTP_HOST} !^www\.
-  RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+  RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
 
-  RewriteCond %{HTTPS} !on
-  RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+  # Disable https for now
+  # RewriteCond %{HTTPS} !on
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 </IfModule>
 
 ErrorDocument 404 /404.html
